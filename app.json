@@ -1,0 +1,9 @@
+{
+  "name": "Node-RED",
+  "description": "A visual tool for wiring the Internet of Things.",
+  "keywords": [ "Node-RED", "IoT", "Internet of Things", "node.js", "node" ],
+  "website": "http://nodered.org/",
+  "repository": "https://github.com/lebalz/node-red-flow.git",
+  "logo": "http://nodered.org/node-red.png",
+  "success_url": "/"
+}

@@ -1,0 +1,28 @@
+services:
+  # Node App
+  - type: web
+    plan: free # optional (defaults to starter)
+    region: frankfurt
+    name: node-red
+    env: node
+    repo: https://github.com/lebalz/node-red-render-fata.git
+    buildCommand: npm install;
+    startCommand: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./settings.js;
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elephant
+          property: connectionString
+      - key: NODE_RED_USERNAME
+        description: the username to secure the editor with, default[admin]
+        sync: false
+      - key: NODE_RED_PASSWORD
+        description: the password to secure the editor with, default[password]
+        sync: false
+databases:
+  - name: elephant
+    plan: free # optional (defaults to starter)
+    region: frankfurt
+    databaseName: nodered # optional (Render may add a suffix)
+    user: nodered # optional
