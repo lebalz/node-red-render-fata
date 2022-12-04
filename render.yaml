@@ -22,6 +22,5 @@ services:
 databases:
   - name: elephant
     plan: free # optional (defaults to starter)
-    region: frankfurt
     databaseName: nodered # optional (Render may add a suffix)
     user: nodered # optional
