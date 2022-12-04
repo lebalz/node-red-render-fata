@@ -2,7 +2,6 @@ services:
   # Node App
   - type: web
     plan: free # optional (defaults to starter)
-    region: frankfurt
     name: node-red
     env: node
     repo: https://github.com/lebalz/node-red-render-fata.git
