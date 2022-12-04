@@ -1,5 +1,5 @@
 {
-    "name"         : "node-red-render",
+    "name"         : "node-red-render-fata",
     "version"      : "0.0.1",
     "dependencies": {
         "when": "~3.x",
@@ -7,6 +7,12 @@
         "nano": "~10.x",
         "feedparser":"~0.19.2",
         "redis":"~0.10.1",
-        "node-red": "~3.x"
+        "node-red": "~3.x",
+        "node-red-dashboard": "~3.2.3",
+        "node-red-contrib-image-tools": "~2.0.4",
+        "node-red-contrib-postgresql": "~0.11.2",
+        "node-red-contrib-scrape-it": "~1.0.6",
+        "node-red-contrib-telegrambot": "~14.8.7",
+        "node-red-contrib-aedes": "~0.9.0"
     }
 }
