@@ -20,6 +20,9 @@ services:
       - key: NODE_RED_PASSWORD
         description: the password to secure the editor with, default[password]
         sync: false
+      - key: NODE_VERSION
+        description: Nodejs version
+        value: 16.16.0
 databases:
   - name: elephant
     region: frankfurt
