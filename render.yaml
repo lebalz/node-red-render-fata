@@ -22,7 +22,7 @@ services:
         sync: false
       - key: NODE_VERSION
         description: Nodejs version
-        value: 16.16.0
+        value: 18
 databases:
   - name: elephant
     region: frankfurt
