@@ -24,7 +24,7 @@ var appname
 
 function timeoutWrap(func) {
   return when.promise(function (resolve, reject, notify) {
-    var promise = func().timeout(5000, 'timeout')
+    var promise = func().timeout(8000, 'timeout')
     promise.then(function (a, b, c, d) {
       resolve(a, b, c, d)
     })
@@ -33,7 +33,7 @@ function timeoutWrap(func) {
       console.log('timeout err', err)
       console.log('TIMEOUT: ', func.name)
       if (err == 'timeout') {
-        reject(err)
+        // reject(err)
       }
     })
   })
@@ -50,7 +50,9 @@ function getFlows() {
         resolve([])
       }
     } catch (err) {
-      reject(err)
+      // reject(err)
+      resolve([])
+      console.log('Error Loading', err);
     }
   })
 }
@@ -63,7 +65,10 @@ function saveFlows(flows) {
       await pgutil.saveConfig(appname, { appname, flows, secureLink })
       resolve()
     } catch (err) {
-      reject(err)
+      resolve()
+      console.log('Error Saving', err);
+
+      // reject(err)
     }
   })
 }
@@ -79,7 +84,8 @@ function getCredentials() {
         resolve({})
       }
     } catch (err) {
-      reject(err)
+      console.log('Error getting Credentials', err);
+      // reject(err)
     }
   })
 }
@@ -91,7 +97,8 @@ function saveCredentials(credentials) {
       await pgutil.saveConfig(appname, { appname, credentials })
       resolve()
     } catch (err) {
-      reject(err)
+      console.log('Error Saving Creds', err);
+      // reject(err)
     }
   })
 }
@@ -107,7 +114,8 @@ function getSettings() {
         resolve({})
       }
     } catch (err) {
-      reject(err)
+      console.log('Error get Settings', err);
+      // reject(err)
     }
   })
 }
@@ -119,7 +127,8 @@ function saveSettings(settings) {
       await pgutil.saveConfig(appname, { appname, settings })
       resolve()
     } catch (err) {
-      reject(err)
+      console.log('Error Saving Settings', err);
+      // reject(err)
     }
   })
 }
@@ -153,7 +162,8 @@ function getLibraryEntry(type, path) {
         resolve(dirs.concat(files))
       }
     } catch (err) {
-      reject(err)
+      console.log('Error getting libs', err);
+      // reject(err)
     }
   })
 }
@@ -171,7 +181,8 @@ function saveLibraryEntry(type, path, meta, body) {
       })
       resolve()
     } catch (err) {
-      reject(err)
+      console.log('Error saving libs', err);
+      // reject(err)
     }
   })
 }
