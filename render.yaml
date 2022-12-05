@@ -7,7 +7,7 @@ services:
     repo: https://github.com/lebalz/node-red-render-fata.git
     buildCommand: npm install;
     startCommand: node --max-old-space-size=480 node_modules/node-red/red.js --settings ./settings.js;
-    healthCheckPath: /ui
+    healthCheckPath: /
     region: frankfurt
     envVars:
       - key: DATABASE_URL
