@@ -2,12 +2,13 @@ services:
   # Node App
   - type: web
     plan: free # optional (defaults to starter)
-    name: node-red-fata
+    name: node-red
     env: node
     repo: https://github.com/lebalz/node-red-render-fata.git
     buildCommand: npm install;
     startCommand: node --max-old-space-size=480 node_modules/node-red/red.js --settings ./settings.js;
-    healthCheckPath: /
+    healthCheckPath: /ui
+    region: frankfurt
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -21,6 +22,7 @@ services:
         sync: false
 databases:
   - name: elephant
+    region: frankfurt
     plan: free # optional (defaults to starter)
     databaseName: nodered # optional (Render may add a suffix)
     user: nodered # optional
