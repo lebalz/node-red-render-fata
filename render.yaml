@@ -2,11 +2,11 @@ services:
   # Node App
   - type: web
     plan: free # optional (defaults to starter)
-    name: node-red
+    name: node-red-fata
     env: node
     repo: https://github.com/lebalz/node-red-render-fata.git
     buildCommand: npm install;
-    startCommand: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./settings.js;
+    startCommand: node --max-old-space-size=480 node_modules/node-red/red.js --settings ./settings.js;
     healthCheckPath: /
     envVars:
       - key: DATABASE_URL
